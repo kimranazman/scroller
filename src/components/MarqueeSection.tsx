@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const words = ['SCROLL', 'ANIMATE', 'DESIGN', 'CREATE', 'INNOVATE', 'BUILD'];
+const words = ['DRILLING', 'REFINING', 'PIPELINE', 'OFFSHORE', 'UPSTREAM', 'LNG'];
 
 export default function MarqueeSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -48,7 +48,7 @@ export default function MarqueeSection() {
       className="relative py-32 overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-950/5 to-transparent" />
 
       {/* Track 1 - moves left */}
       <div className="mb-8 overflow-hidden">
@@ -62,7 +62,7 @@ export default function MarqueeSection() {
               key={i}
               className="text-7xl md:text-9xl font-black text-transparent stroke-text select-none"
               style={{
-                WebkitTextStroke: '1px rgba(255,255,255,0.1)',
+                WebkitTextStroke: '1px rgba(249, 115, 22, 0.15)',
               }}
             >
               {word}

@@ -7,10 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: 99.9, suffix: '%', label: 'Uptime Guaranteed' },
-  { value: 60, suffix: 'fps', label: 'Smooth Animations' },
-  { value: 100, suffix: 'K+', label: 'Lines of Code' },
-  { value: 24, suffix: '/7', label: 'Support Available' },
+  { value: 2.5, suffix: 'M', label: 'Barrels Per Day' },
+  { value: 40, suffix: '+', label: 'Countries' },
+  { value: 99.7, suffix: '%', label: 'Safety Record' },
+  { value: 50, suffix: 'YRS', label: 'Industry Experience' },
 ];
 
 export default function NumbersSection() {
@@ -80,15 +80,15 @@ export default function NumbersSection() {
       className="relative py-32 px-6 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-950/10 to-transparent" />
 
-      {/* Decorative line */}
-      <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      {/* Decorative pipeline */}
+      <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white/10 uppercase tracking-wider">
-            By The Numbers
+            Performance Metrics
           </h2>
         </div>
 
@@ -105,12 +105,12 @@ export default function NumbersSection() {
                 >
                   0
                 </span>
-                <span className="text-3xl md:text-4xl font-bold text-white/40 ml-1">
+                <span className="text-3xl md:text-4xl font-bold text-orange-400/40 ml-1">
                   {stat.suffix}
                 </span>
 
                 {/* Glow on hover */}
-                <div className="absolute inset-0 bg-indigo-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-orange-500/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               <p className="text-white/40 text-sm uppercase tracking-widest">

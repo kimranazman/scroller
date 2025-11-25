@@ -36,7 +36,7 @@ export default function TextRevealSection() {
     return () => ctx.revert();
   }, []);
 
-  const text = "We craft digital experiences that push boundaries. Every pixel is intentional. Every animation tells a story. This is where engineering meets artistry.";
+  const text = "From deep-sea exploration to refined delivery, we engineer complete energy solutions. Our expertise spans upstream drilling, midstream transportation, and downstream processing with uncompromising safety standards.";
   const words = text.split(' ');
 
   return (
@@ -44,11 +44,15 @@ export default function TextRevealSection() {
       ref={containerRef}
       className="min-h-screen flex items-center justify-center py-32 px-6 relative"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/10 to-transparent" />
+      {/* Pipeline decoration */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-96 bg-gradient-to-b from-transparent via-orange-500/20 to-transparent" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-96 bg-gradient-to-b from-transparent via-sky-500/20 to-transparent" />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-950/10 to-transparent" />
 
       <div
         ref={textRef}
-        className="max-w-5xl mx-auto text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight text-center"
+        className="max-w-5xl mx-auto text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-center"
       >
         {words.map((word, i) => (
           <span key={i} className="word inline-block mr-4 text-white/90">

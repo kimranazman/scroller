@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Scroller | Premium Scroll Animations Demo",
-  description: "Experience beautiful, award-winning scroll animations. A showcase of modern web engineering with GSAP and Next.js.",
+  title: "PetroFlow | Oil & Gas Engineering Excellence",
+  description: "Leading the future of energy with innovative oil & gas solutions. Precision engineering meets sustainable practices.",
 };
 
 export default function RootLayout({

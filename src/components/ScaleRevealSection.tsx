@@ -60,13 +60,13 @@ export default function ScaleRevealSection() {
         ref={boxRef}
         className="relative w-full max-w-5xl aspect-video overflow-hidden"
       >
-        {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 opacity-90" />
+        {/* Gradient background - oil & gas industrial */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-600 via-amber-600 to-sky-700 opacity-90" />
 
         {/* Mesh gradient overlay */}
         <div className="absolute inset-0 opacity-50">
           <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-white/20 to-transparent" />
-          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-black/20 to-transparent" />
+          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-black/30 to-transparent" />
         </div>
 
         {/* Grid pattern */}
@@ -78,21 +78,21 @@ export default function ScaleRevealSection() {
           className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8"
         >
           <span className="text-white/60 text-sm uppercase tracking-widest mb-6">
-            Featured Showcase
+            Offshore Excellence
           </span>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            Expand Your
+            Deep Water
             <br />
-            <span className="text-white/80">Imagination</span>
+            <span className="text-white/80">Innovation</span>
           </h2>
           <p className="text-lg text-white/70 max-w-lg">
-            Watch elements transform and scale into view,
-            creating a sense of discovery and wonder.
+            Pioneering ultra-deepwater drilling at depths exceeding 10,000 feet.
+            Where others see limits, we see opportunities.
           </p>
 
           <button className="mt-10 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-medium hover:bg-white/20 transition-all duration-300 group">
             <span className="flex items-center gap-2">
-              Explore More
+              View Projects
               <svg
                 className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                 fill="none"

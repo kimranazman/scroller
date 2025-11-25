@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - oil/industrial theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -39,27 +39,39 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  background: linear-gradient(180deg, #f97316, #ea580c);
   border-radius: 4px;
 }
 
-/* Gradient text utility */
+/* Gradient text utility - oil & gas colors */
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Glow effects */
+.gradient-text-blue {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects - industrial orange/blue */
 .glow {
-  box-shadow: 0 0 60px rgba(99, 102, 241, 0.3),
-              0 0 120px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 0 60px rgba(249, 115, 22, 0.3),
+              0 0 120px rgba(234, 88, 12, 0.2);
+}
+
+.glow-blue {
+  box-shadow: 0 0 60px rgba(14, 165, 233, 0.3),
+              0 0 120px rgba(2, 132, 199, 0.2);
 }
 
 .text-glow {
-  text-shadow: 0 0 40px rgba(99, 102, 241, 0.5),
-               0 0 80px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 40px rgba(249, 115, 22, 0.5),
+               0 0 80px rgba(234, 88, 12, 0.3);
 }
 
 /* Noise texture overlay */
@@ -71,7 +83,7 @@ body {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   z-index: 9999;
 }
@@ -101,11 +113,11 @@ section {
   animation: pulse-glow 4s ease-in-out infinite;
 }
 
-/* Grid pattern background */
+/* Grid pattern background - industrial */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -117,4 +129,28 @@ section {
 
 .horizontal-scroll-section > * {
   flex-shrink: 0;
+}
+
+/* Oil drip animation */
+@keyframes drip {
+  0% { transform: translateY(-100%) scaleY(0); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateY(0) scaleY(1); }
+  100% { transform: translateY(100vh) scaleY(1.5); opacity: 0; }
+}
+
+.oil-drip {
+  animation: drip 4s ease-in infinite;
+}
+
+/* Pipeline flow animation */
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.pipeline-flow {
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: flow 3s linear infinite;
 }

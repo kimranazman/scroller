@@ -8,28 +8,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
   {
-    title: 'Performance',
-    description: 'Optimized to perfection with 60fps animations',
-    color: 'from-indigo-500 to-purple-500',
-    icon: '⚡',
+    title: 'Exploration',
+    description: 'Advanced seismic imaging and reservoir analysis for optimal drilling locations',
+    color: 'from-orange-500 to-amber-500',
+    icon: '🔍',
   },
   {
-    title: 'Design',
-    description: 'Pixel-perfect craftsmanship in every detail',
-    color: 'from-purple-500 to-pink-500',
-    icon: '✨',
+    title: 'Drilling',
+    description: 'State-of-the-art directional drilling and well completion technologies',
+    color: 'from-amber-500 to-yellow-500',
+    icon: '⚙️',
   },
   {
-    title: 'Innovation',
-    description: 'Pushing the boundaries of whats possible',
-    color: 'from-pink-500 to-rose-500',
-    icon: '🚀',
+    title: 'Production',
+    description: 'Maximizing recovery rates with intelligent extraction systems',
+    color: 'from-sky-500 to-blue-500',
+    icon: '🛢️',
   },
   {
-    title: 'Experience',
-    description: 'Creating memorable digital journeys',
-    color: 'from-rose-500 to-orange-500',
-    icon: '💎',
+    title: 'Refining',
+    description: 'Converting crude into high-value products with minimal environmental impact',
+    color: 'from-blue-500 to-indigo-500',
+    icon: '🏭',
   },
 ];
 
@@ -40,9 +40,8 @@ export default function HorizontalScrollSection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const track = trackRef.current;
-      const cards = track?.querySelectorAll('.card');
 
-      if (track && cards) {
+      if (track) {
         const totalWidth = track.scrollWidth - window.innerWidth;
 
         gsap.to(track, {
@@ -57,28 +56,6 @@ export default function HorizontalScrollSection() {
             anticipatePin: 1,
           },
         });
-
-        // Card animations
-        cards.forEach((card, i) => {
-          gsap.fromTo(
-            card,
-            { scale: 0.8, opacity: 0, rotateY: -15 },
-            {
-              scale: 1,
-              opacity: 1,
-              rotateY: 0,
-              duration: 1,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: card,
-                containerAnimation: gsap.getById('horizontal-scroll') as gsap.core.Animation,
-                start: 'left 80%',
-                end: 'left 30%',
-                scrub: 1,
-              },
-            }
-          );
-        });
       }
     }, containerRef);
 
@@ -91,12 +68,12 @@ export default function HorizontalScrollSection() {
       className="relative h-screen overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-indigo-950/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-orange-950/10 to-black" />
 
       {/* Section title */}
       <div className="absolute top-20 left-0 right-0 text-center z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-white/10">
-          WHAT WE DO
+          OUR CAPABILITIES
         </h2>
       </div>
 
@@ -154,7 +131,7 @@ export default function HorizontalScrollSection() {
             key={i}
             className="w-12 h-1 bg-white/10 rounded-full overflow-hidden"
           >
-            <div className="h-full bg-white/40 rounded-full" style={{ width: '0%' }} />
+            <div className="h-full bg-orange-500/40 rounded-full" style={{ width: '0%' }} />
           </div>
         ))}
       </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -42,10 +42,23 @@ const depthMilestones = [
 export default function DeepDiveSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const depthIndicatorRef = useRef<HTMLDivElement>(null);
+  const depthContainerRef = useRef<HTMLDivElement>(null);
   const milestonesRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Show/hide depth indicator based on section visibility
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        onEnter: () => setIsInView(true),
+        onLeave: () => setIsInView(false),
+        onEnterBack: () => setIsInView(true),
+        onLeaveBack: () => setIsInView(false),
+      });
+
       // Depth indicator progress
       gsap.to(depthIndicatorRef.current, {
         scaleY: 1,
@@ -104,7 +117,12 @@ export default function DeepDiveSection() {
       </div>
 
       {/* Depth Progress Indicator */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
+      <div
+        ref={depthContainerRef}
+        className={`fixed left-8 top-1/2 -translate-y-1/2 z-30 hidden lg:block transition-opacity duration-500 ${
+          isInView ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="relative h-64 w-2 bg-slate-800/50 rounded-full overflow-hidden">
           <div
             ref={depthIndicatorRef}

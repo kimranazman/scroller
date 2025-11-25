@@ -35,54 +35,117 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative py-32 px-6 overflow-hidden bg-black"
+      className="relative py-32 px-6 overflow-hidden bg-[#030810]"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-orange-950/30 via-orange-950/10 to-transparent" />
+      {/* Background - Deep ocean floor */}
+      <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-slate-950/50 to-transparent" />
+
+      {/* Underwater particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              bottom: `${Math.random() * 100}%`,
+              animation: `bubble-rise ${15 + Math.random() * 10}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Top border glow */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
 
       <div
         ref={contentRef}
         className="max-w-4xl mx-auto text-center relative z-10"
       >
-        <h2 className="text-5xl md:text-7xl font-bold mb-8">
-          <span className="gradient-text">Partner With</span>
+        {/* ROV Icon */}
+        <div className="mb-8 flex justify-center">
+          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-amber-500/20 border border-cyan-500/30 flex items-center justify-center">
+            <span className="text-4xl">🤖</span>
+          </div>
+        </div>
+
+        <h2 className="text-4xl md:text-6xl font-bold mb-8">
+          <span className="text-white">Ready to</span>
           <br />
-          <span className="text-white/90">Industry Leaders</span>
+          <span className="gradient-text-cyan">Go Deeper?</span>
         </h2>
 
-        <p className="text-xl text-white/50 mb-12 max-w-xl mx-auto">
-          Join the world&apos;s most innovative energy companies.
-          Together, we power progress.
+        <p className="text-xl text-slate-400 mb-12 max-w-xl mx-auto">
+          Partner with the industry&apos;s leading subsea solutions provider.
+          From concept to completion, we deliver results at any depth.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full text-white font-medium hover:opacity-90 transition-opacity glow">
-            Contact Us
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg text-white font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50 hover:scale-105">
+            Request a Quote
           </button>
-          <button className="px-8 py-4 bg-white/5 border border-orange-500/20 rounded-full text-white/70 font-medium hover:bg-white/10 transition-colors">
-            View Capabilities
+          <button className="px-8 py-4 bg-slate-900/50 border border-cyan-500/30 rounded-lg text-cyan-400 font-semibold hover:bg-cyan-500/10 transition-all duration-300">
+            View Fleet Specs
           </button>
         </div>
 
-        <div className="mt-24 pt-12 border-t border-white/10">
+        {/* Quick Links */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-sm">
+          {[
+            { title: 'Services', items: ['Inspection', 'Intervention', 'Construction'] },
+            { title: 'Fleet', items: ['Work-Class ROV', 'Observation ROV', 'AUV Systems'] },
+            { title: 'Industries', items: ['Oil & Gas', 'Renewables', 'Telecommunications'] },
+            { title: 'Support', items: ['24/7 Operations', 'Training', 'Documentation'] },
+          ].map((section, i) => (
+            <div key={i} className="text-left">
+              <h4 className="text-cyan-400 font-semibold mb-3 uppercase tracking-wider text-xs">
+                {section.title}
+              </h4>
+              <ul className="space-y-2">
+                {section.items.map((item, j) => (
+                  <li key={j}>
+                    <a href="#" className="text-slate-500 hover:text-slate-300 transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-12 border-t border-slate-800/50">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-2xl font-bold gradient-text">
-              PETROFLOW
+            <div className="text-2xl font-bold">
+              <span className="gradient-text-cyan">DEEP</span>
+              <span className="text-amber-400">ROV</span>
             </div>
 
-            <div className="flex items-center gap-8 text-white/30 text-sm">
-              <span>Global Energy Solutions</span>
-              <span>&copy; 2024</span>
+            <div className="flex items-center gap-8 text-slate-500 text-sm">
+              <span>Subsea Excellence</span>
+              <span>•</span>
+              <span>&copy; 2024 DeepROV Solutions</span>
+            </div>
+
+            {/* Certifications */}
+            <div className="flex items-center gap-4">
+              {['ISO 9001', 'IMCA', 'API'].map((cert, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 text-xs font-mono text-slate-500 bg-slate-900/50 rounded border border-slate-800/50"
+                >
+                  {cert}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom decorative line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 opacity-50" />
+      {/* Bottom decorative line - ROV navigation lights */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-600 via-amber-500 to-cyan-600 opacity-50" />
     </footer>
   );
 }

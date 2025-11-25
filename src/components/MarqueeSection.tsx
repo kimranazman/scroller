@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const words = ['DRILLING', 'REFINING', 'PIPELINE', 'OFFSHORE', 'UPSTREAM', 'LNG'];
+const words = ['ROV', 'SUBSEA', 'INSPECTION', 'INTERVENTION', 'DEEPWATER', 'PIPELINE'];
 
 export default function MarqueeSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -45,10 +45,13 @@ export default function MarqueeSection() {
   return (
     <section
       ref={containerRef}
-      className="relative py-32 overflow-hidden"
+      className="relative py-32 overflow-hidden bg-[#061018]"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-950/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/5 to-transparent" />
+
+      {/* Sonar pulse decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-cyan-500/5 pulse-glow pointer-events-none" />
 
       {/* Track 1 - moves left */}
       <div className="mb-8 overflow-hidden">
@@ -62,7 +65,7 @@ export default function MarqueeSection() {
               key={i}
               className="text-7xl md:text-9xl font-black text-transparent stroke-text select-none"
               style={{
-                WebkitTextStroke: '1px rgba(249, 115, 22, 0.15)',
+                WebkitTextStroke: '1px rgba(14, 165, 233, 0.15)',
               }}
             >
               {word}
@@ -81,7 +84,7 @@ export default function MarqueeSection() {
           {[...words, ...words, ...words, ...words].reverse().map((word, i) => (
             <span
               key={i}
-              className="text-7xl md:text-9xl font-black gradient-text select-none opacity-20"
+              className="text-7xl md:text-9xl font-black gradient-text-cyan select-none opacity-20"
             >
               {word}
             </span>

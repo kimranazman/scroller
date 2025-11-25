@@ -36,23 +36,44 @@ export default function TextRevealSection() {
     return () => ctx.revert();
   }, []);
 
-  const text = "From deep-sea exploration to refined delivery, we engineer complete energy solutions. Our expertise spans upstream drilling, midstream transportation, and downstream processing with uncompromising safety standards.";
+  const text = "Operating at depths where sunlight never reaches, our ROV fleet performs critical subsea interventions with surgical precision. From wellhead maintenance to pipeline inspection, we bring human expertise to the most extreme environments on Earth.";
   const words = text.split(' ');
 
   return (
     <section
       ref={containerRef}
-      className="min-h-screen flex items-center justify-center py-32 px-6 relative"
+      className="min-h-screen flex items-center justify-center py-32 px-6 relative bg-[#071520]"
     >
-      {/* Pipeline decoration */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-96 bg-gradient-to-b from-transparent via-orange-500/20 to-transparent" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-96 bg-gradient-to-b from-transparent via-sky-500/20 to-transparent" />
+      {/* Depth markers decoration */}
+      <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
+      <div className="absolute right-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent" />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-950/10 to-transparent" />
+      {/* Depth indicators */}
+      <div className="absolute left-4 top-1/4 text-cyan-500/20 font-mono text-xs">1000m</div>
+      <div className="absolute left-4 top-1/2 text-cyan-500/30 font-mono text-xs">2000m</div>
+      <div className="absolute left-4 top-3/4 text-cyan-500/40 font-mono text-xs">3000m</div>
+
+      {/* Underwater particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {Array.from({ length: 30 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${5 + Math.random() * 5}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 3}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/10 to-transparent" />
 
       <div
         ref={textRef}
-        className="max-w-5xl mx-auto text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-center"
+        className="max-w-5xl mx-auto text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed tracking-tight text-center"
       >
         {words.map((word, i) => (
           <span key={i} className="word inline-block mr-4 text-white/90">

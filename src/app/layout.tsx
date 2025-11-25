@@ -13,8 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PetroFlow | Oil & Gas Engineering Excellence",
-  description: "Leading the future of energy with innovative oil & gas solutions. Precision engineering meets sustainable practices.",
+  title: "DeepROV | Subsea ROV Solutions & Underwater Maintenance",
+  description: "Industry-leading remotely operated vehicles for subsea inspection, maintenance, and intervention. Advanced 3D visualization of ROV capabilities for oil & gas infrastructure.",
+  keywords: ["ROV", "subsea", "underwater", "maintenance", "oil and gas", "inspection", "intervention", "remotely operated vehicle"],
+  authors: [{ name: "DeepROV Solutions" }],
+  openGraph: {
+    title: "DeepROV | Subsea ROV Solutions",
+    description: "Advanced remotely operated vehicles for subsea operations",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

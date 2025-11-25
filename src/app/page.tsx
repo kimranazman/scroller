@@ -9,10 +9,12 @@ import NumbersSection from '@/components/NumbersSection';
 import ScaleRevealSection from '@/components/ScaleRevealSection';
 import MarqueeSection from '@/components/MarqueeSection';
 import Footer from '@/components/Footer';
+import FloatingObject from '@/components/FloatingObject';
 
 export default function Home() {
   return (
     <SmoothScroll>
+      <FloatingObject />
       <main className="noise">
         <HeroSection />
         <TextRevealSection />

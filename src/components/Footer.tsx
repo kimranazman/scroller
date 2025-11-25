@@ -35,13 +35,13 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative py-32 px-6 overflow-hidden"
+      className="relative py-32 px-6 overflow-hidden bg-black"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-orange-950/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-950/30 via-orange-950/10 to-transparent" />
 
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
+      {/* Top border glow */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
 
       <div
         ref={contentRef}
@@ -67,7 +67,7 @@ export default function Footer() {
           </button>
         </div>
 
-        <div className="mt-24 pt-12 border-t border-white/5">
+        <div className="mt-24 pt-12 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-2xl font-bold gradient-text">
               PETROFLOW
@@ -80,6 +80,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Bottom decorative line */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 opacity-50" />
     </footer>
   );
 }

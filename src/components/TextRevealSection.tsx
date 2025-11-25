@@ -76,7 +76,11 @@ export default function TextRevealSection() {
         className="max-w-5xl mx-auto text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed text-center"
       >
         {words.map((word, i) => (
-          <span key={i} className="word inline-block text-white/90 mr-[0.3em]">
+          <span
+            key={i}
+            className="word inline-block text-white/90"
+            style={{ marginRight: '0.3em' }}
+          >
             {word}
           </span>
         ))}

@@ -73,11 +73,11 @@ export default function TextRevealSection() {
 
       <div
         ref={textRef}
-        className="max-w-5xl mx-auto text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed tracking-tight text-center"
+        className="max-w-5xl mx-auto text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed text-center"
       >
         {words.map((word, i) => (
-          <span key={i} className="word inline-block text-white/90">
-            {word}{' '}
+          <span key={i} className="word inline-block text-white/90 mr-[0.3em]">
+            {word}
           </span>
         ))}
       </div>

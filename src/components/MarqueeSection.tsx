@@ -45,7 +45,8 @@ export default function MarqueeSection() {
   return (
     <section
       ref={containerRef}
-      className="relative py-32 overflow-hidden bg-[#061018]"
+      className="relative py-24 overflow-hidden bg-[#061018]"
+      style={{ marginTop: '-1px' }}
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/5 to-transparent" />

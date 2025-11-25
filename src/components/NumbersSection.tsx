@@ -107,7 +107,7 @@ export default function NumbersSection() {
   return (
     <section
       ref={containerRef}
-      className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-[#0a1628] to-[#071520]"
+      className="relative py-40 px-6 overflow-hidden bg-gradient-to-b from-[#0a1628] to-[#071520]"
     >
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">

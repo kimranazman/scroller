@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      className="relative pt-64 pb-32 px-6 overflow-hidden bg-[#030810]"
+      className="relative z-10 pt-32 pb-20 px-6 overflow-hidden bg-[#030810]"
     >
       {/* Background - Deep ocean floor */}
       <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-slate-950/50 to-transparent" />
